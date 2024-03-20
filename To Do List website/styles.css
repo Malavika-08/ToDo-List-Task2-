@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url(background.jpg);
+    background-size: cover; 
+}
+header{
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: transparent;
+}
+header .container{
+    height: 10vh;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+}
+.logo img{
+    height: 100px;
+    width: 200px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.capsule ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+   
+}
+nav .capsule{
+     background-color: #fff;
+     border-radius: 50px;
+     padding: 0px;
+     box-shadow: 0 25px 20px -20px rgba(0, 0, 0, 0.5);
+     width: 30%;
+     float: right;
+     margin-top: -80px;
+     
+}
+ ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 13px 35px;
+    margin: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #777;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: color 0.5s;
+}
+nav ul li::after{
+    content: "";
+    background:#f44566 ;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0;
+    transition: top 0.5s, opacity 0.5s;
+}
+nav ul li:hover{
+   color: white; 
+}
+nav ul li:hover::after{
+    top: 50%;
+    opacity: 1;
+}
+.main{
+    width: 100%;
+    height: 90vh;
+    position: center;
+}
+.main img{
+    display: flex;
+    margin: auto;
+    height: 100%;
+    filter: drop-shadow(20px 20px 40px rgba(0, 0, 0, 0.568));
+}
+.content{
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.content .container{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    margin: auto;
+    height: 100%;
+}
+.todo{
+    display: flex;
+    padding: 15px;
+    cursor:pointer;
+}
+.todo_value{
+    cursor: inherit;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    flex-grow: 1;
+    border-bottom: 2px solid rgb(232, 99, 232);
+}
+.todo_checkbox{
+cursor: inherit;
+}
+.todo:has(.todo_checkbox:checked){
+    text-decoration:line-through;
+    color: rgb(1, 42, 1);
+    background: rgba(0 ,0 ,0 ,0.14);
+    order:1;
+}
